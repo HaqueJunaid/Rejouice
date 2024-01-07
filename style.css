@@ -1,0 +1,655 @@
+@font-face {
+    font-family: Rejoy;
+    src: url(./Font/Rejouice.ttf);
+}
+
+@font-face {
+    font-family: nb;
+    src: url(./Font/NB.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: nb;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#page1 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#cursor {
+    position: fixed;
+    z-index: 9;
+    width: 7vw;
+    height: 7vw;
+    background-color: #FF5F38;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -5vw;
+    left: -5vw;
+}
+
+#cursor h4 {
+    line-height: 0.8;
+    font-size: 1.1vw;
+    font-weight: 400;
+}
+
+#page1 video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+#page1-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    color: #FFFCF1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor:default;
+}
+
+#page1-content nav {
+    padding: 3vw 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 75vw;
+}
+
+#page1-content nav .overlay {
+    overflow: hidden;
+}
+
+#page1-content nav .overlay h3 {
+    font-size: 1.4vw;
+    font-weight: 100;
+    position: relative;
+}
+
+nav .overlay {
+    position: relative;
+}
+
+#page1-content>#h1 {
+    bottom: -2vw;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+#page1-content #h1 span {
+    margin-right: 1.5vw;
+    font-family: Rejoy;
+    font-size: 19vw;
+    font-weight: 900;
+    position: relative;
+    top: 150%;
+}
+
+#page2 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #FFFCF1;
+    color: #0E0E0E;
+    padding: 5vw 3vw;
+    font-family: nb;
+}
+
+#page2-upper {
+    padding: 0.8vw 0 0 0.2vw;
+    font-size: 1.5vw;
+}
+
+#page2-upper .over {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+}
+
+#page2-upper .over h3 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    top: 2vw;
+    position: relative;
+}
+
+#page2 .line {
+    display: inline-block;
+    height: 1px;
+    background-color: #0E0E0E;
+}
+
+#page2-lower {
+    width: 100%;
+    margin-top: 1vw;
+}
+
+#page2-lower .elem {
+    position: relative;
+    overflow: hidden;
+}
+
+.elem:nth-child(1) {
+    padding-left: 8vw;
+}
+
+.elem h1 {
+    font-size: 4.2vw;
+    font-weight: 100;
+    position: relative;
+}
+
+#page3 {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFFCF1;
+    padding: 5vw 3vw;
+    position: relative;
+}
+
+#page3 #page3-text {
+    text-align: center;
+}
+
+#page3-text h5 {
+    font-size: 1.2vw;
+    font-weight: 100;
+    color: #0E0E0E;
+    position: relative;
+}
+
+#page3-text h5 span {
+    color: #FFFCF1;
+    background-color: #0E0E0E;
+    font-size: 0.8vw;
+    padding: 0.2vw 0.6vw;
+    border-radius: 10vw;
+    font-weight: 100;
+    position: relative;
+    top: -0.1vw;
+}
+
+#page3-text #maintext .overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+#page3-text #maintext .overlay h1 {
+    font-size: 4vw;
+    font-weight: 500;
+    color: #0E0E0E;
+    margin-top: 0.2vw;
+    position: relative;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    position: relative;
+}
+
+#cardElements {
+    margin-top: 6vw;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#cardElements #text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 0;
+}
+
+#cardElements #text h4 {
+    font-size: 1.8vw;
+    font-weight: 100;
+}
+
+#videos {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#videos .videoContainer {
+    width: 32%;
+    position: relative;
+    height: 100%;
+}
+
+#videos .videoContainer img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 98;
+    transition: 0.5s ease;
+}
+
+#videos .videoContainer:hover img {
+    opacity: 0;
+}
+
+#videos .videoContainer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#page4 {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background-color: #FFFCF1;
+    color: #0E0E0E;
+    padding: 5vw 3vw;
+    font-family: nb;
+    overflow: hidden;
+}
+
+#page4-upper {
+    padding: 0.8vw 0 0 0.2vw;
+    font-size: 1.5vw;
+}
+
+#page4-upper .page4-over {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+}
+
+#page4-upper .page4-over h3 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    top: 2vw;
+    position: relative;
+}
+
+#page4 .page4-line {
+    display: inline-block;
+    height: 1px;
+    background-color: #0E0E0E;
+}
+
+#page4-lower {
+    width: 100%;
+    margin-top: 1vw;
+}
+
+#page4-lower .page4-elem {
+    position: relative;
+    overflow: hidden;
+}
+
+.page4-elem:nth-child(1) {
+    padding-left: 8vw;
+}
+
+.page4-elem h1 {
+    font-size: 4.2vw;
+    font-weight: 100;
+    position: relative;
+}
+
+#page5 {
+    cursor: default;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFCF1;
+    position: relative;
+}
+
+#svg-cursor {
+    position: absolute;
+    z-index: 12;
+    width: 7vw;
+    height: 7vw;
+    background-color: #0E0E0E;
+    color: #FFFCF1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: -5vw;
+    left: -5vw;
+}
+
+#svg-cursor h5 {
+    font-size: 1.1vw;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+#svg-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#svg-container video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.1;
+}
+
+#svg-container svg {
+    position: absolute;
+    width: 30vw;
+    z-index: 8;
+}
+
+.counter {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    z-index: 7;
+}
+
+.counter h1 {
+    font-size: 3vw;
+    font-weight: 100;
+}
+
+.counter p {
+    font-size: 1vw;
+}
+
+#page6 {
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFCF1;
+    position: relative;
+}
+
+#page6 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #FFFCF1;
+    color: #0E0E0E;
+    padding: 5vw 3vw;
+    font-family: nb;
+}
+
+#page6-upper {
+    padding: 0.8vw 0 0 0.2vw;
+    font-size: 1.5vw;
+}
+
+#page6-upper .page6-over {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+}
+
+#page6-upper .page6-over h3 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    top: 2vw;
+    position: relative;
+}
+
+#page6 .page6-line {
+    display: inline-block;
+    height: 1px;
+    background-color: #0E0E0E;
+}
+
+#page6-lower {
+    width: 100%;
+    margin-top: 1vw;
+}
+
+#page6-lower .page6-elem {
+    position: relative;
+    overflow: hidden;
+}
+
+.page6-elem:nth-child(1) {
+    padding-left: 8vw;
+}
+
+.page6-elem h1 {
+    font-size: 4.2vw;
+    font-weight: 100;
+    position: relative;
+}
+
+#page7 {
+    width: 100%;
+    height: 90vh;
+    padding: 3vw 0;
+    color: #0E0E0E;
+    background-color: #FFFCF1;
+    position: relative;
+}
+
+#page7>h1 {
+    margin-left: 3vw;
+    width: 94%;
+    font-family: Rejoy;
+    font-size: 9vw;
+    font-weight: 100;
+    line-height: 1;
+    border-bottom: 1px solid #0E0E0E;
+    cursor: default;
+}
+
+.swiper {
+    margin-top: -4vw;
+    width: 100%;
+    height: 75%;
+    -webkit-user-select: none; 
+    cursor: pointer;
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+ }
+
+#page8 {
+    width: 100%;
+    height: 45vh;
+    background-color: #FFFCF1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 2vw;
+    text-align: center;
+}
+
+#page8 #div-container h4 {
+    font-size: 1.2vw;
+    font-weight: 100;
+    color: #0E0E0E;
+    position: relative;
+}
+
+#page8 #div-container .overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+#page8 #div-container .overlay h1 {
+    font-size: 4vw;
+    font-weight: 500;
+    color: #0E0E0E;
+    margin-top: 0.2vw;
+    position: relative;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    position: relative;
+}
+
+footer {
+    width: 100%;
+    height: 100vh;
+    background-color: #0E0E0E;
+    color: #FFFCF1;
+    position: relative;
+    overflow: hidden;
+    padding: 2vw 3vw;
+}
+
+footer .footer-link {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-link-left h3 {
+    font-size: 1.8vw;
+    font-weight: 100;
+}
+
+footer .footer-link-left button {
+    margin-top: 2vw;
+    background-color: transparent;
+    color: #FFFCF1;
+    border: 1px solid #FFFCF1;
+    border-radius: 0.6vw;
+    padding: 1vw 1.2vw;
+    font-size: 1.2vw;
+    font-weight: 100;
+    transition: 0.5s ease;
+}
+
+footer .footer-link-left button:hover {
+    color: #0E0E0E;
+    background-color: #FFFCF1;
+}
+
+footer .footer-link-right {
+    height: 100%;
+    display: flex;
+    align-items: start;
+    text-align: left;
+}
+footer .footer-link .footer-link-right #first {
+    margin-right: 5vw;
+    height: 100%;
+}
+
+footer .footer-link .footer-link-right #first h6 {
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-bottom: 0.08vw;
+}
+
+footer .footer-link .footer-link-right #second {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}   
+
+footer .footer-link .footer-link-right #second .icons {
+    display: flex;
+    align-items: start;
+}
+
+footer .footer-link .footer-link-right #second .icons h6 {
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-bottom: 0.08vw;
+}
+
+footer .footer-link .footer-link-right #second .icons .logo {
+    font-size: 1.2vw;
+    font-weight: 100;
+    margin-bottom: 0.08vw;
+}
+
+footer .footer-link .footer-link-right #second .ri-arrow-right-up-line {
+    font-size: 1.2vw;
+    font-weight: 100;
+}   
+
+#footer-middle {
+    text-align: left;
+    width: 100%;
+    padding-top: 8vw;
+    padding-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer-middle h4 {
+    font-size: 1.1vw;
+    font-weight: 100;
+}
+
+#footer-middle .emails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vw;
+}
+
+
+footer #h1 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+}
+
+footer #h1 span {
+    margin-right: 1vw;
+    font-family: Rejoy;
+    font-size: 19vw;
+    font-weight: 900;
+}
